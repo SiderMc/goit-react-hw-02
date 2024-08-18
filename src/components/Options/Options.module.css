@@ -1,0 +1,17 @@
+.options__actions_btns{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.options__btn{
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 10px 25px;
+    box-shadow: 2px 2px 3px #AC92A6;
+    transition: box-shadow 300ms linear;
+}
+.options__btn:hover{
+    box-shadow: 0 0 0 #AC92A6;
+    transition: box-shadow 300ms linear;
+}

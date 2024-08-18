@@ -1,0 +1,18 @@
+.feedback{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.feedback__text span{
+    font-weight: 500;
+}
+.good{
+    color: green;
+}
+.neutral{
+    color: rgb(255, 145, 0);
+}
+.bad{
+    color: red;
+}
