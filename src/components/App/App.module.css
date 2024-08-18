@@ -21,12 +21,7 @@
     box-shadow: 2px 2px 3px #AC92A6;
     padding: 15px;
 }
-.feedback__text_content{
-    text-align: center;
-}
-.feedback__title{
-    margin-bottom: 15px;
-}
+
 .feedback__action_content{
   display: flex;
   flex-direction: column;

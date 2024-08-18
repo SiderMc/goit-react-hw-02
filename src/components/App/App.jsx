@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
+import Description from "../Description/Description"
 import Options from "../Options/Options"
 import FeedBack from "../Feedback/Feedback"
+import Notification from "../Notification/Notification"
 import css from "./App.module.css"
 
 export default function App(){
@@ -18,6 +20,7 @@ export default function App(){
     },[feedback])
     
     const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
+    const positiveFeedback  = totalFeedback ? Math.round((feedback.good / totalFeedback) * 100) : 0;
 
     const resetFeedback = ()=>{
         return setFeedback(initialState)
@@ -29,14 +32,10 @@ export default function App(){
             <section className={css.section}>
               <div className={css.container}>
                 <div className={css.feedback__content}>
-                    <div className={css.feedback__text_content}>
-                        <h1 className={css.feedback__title}>Sip Happens Café
-                        </h1>
-                        <p className={css.feedback__description}>Please leave your feedback about our service by selecting one of the options below.
-                        </p>
-                    </div>
+                    <Description/>
                     <div className={css.feedback__action_content}>
-                        <FeedBack feedback={feedback} totalFeedback={totalFeedback}/>
+                    {totalFeedback !== 0 ? 
+                        <FeedBack feedback={feedback} totalFeedback={totalFeedback} positiveFeedback={positiveFeedback}/>: <Notification>There are no reviews yet. Be the first to leave feedback!</Notification>}
                         <Options totalFeedback={totalFeedback} updateFeedback={updateFeedback} resetFeedback={resetFeedback}/>
                     </div>
                 </div>
